@@ -34,9 +34,19 @@ pip uninstall pandas
 pip install pandas
 
 # 5. Run Nanoplot on the unclassified reads                                                                                                                                            
-cd soil_metagenomics/20251107_1254_MN29288_FBE86142_e0306a7f/pod5/demux/
-NanoPlot -o e0306a7f-0f47-436a-bfef-23e64d0532f5_unclassified_np --fastq e0306a7f-0f47-436a-bfef-23e64d0532f5_unclassified.fastq
+cd ~/PBC450_2025/soil_metagenomics/20251107_1254_MN29288_FBE86142_e0306a7f/pod5/demux/
+#NanoPlot -o e0306a7f-0f47-436a-bfef-23e64d0532f5_unclassified_np --fastq e0306a7f-0f47-436a-bfef-23e64d0532f5_unclassified.fastq
+#for barcode 20 (homework)
+NanoPlot -o barcode20_np --fastq e0306a7f-0f47-436a-bfef-23e64d0532f5_SQK-RBK114-24_barcode20.fastq
+#run next scp on your laptop ie, not the terminal where you are connected to curie
+scp -r your_netid@10.2.0.53:/home/your_netid/PBC450_2025/soil_metagenomics/20251107_1254_MN29288_FBE86142_e0306a7f/pod5/demux/barcode20_np .
 
 # 6. Run epi2me wf-metagenomics pipeline, this uses nextflow                                                                                                                           
-nextflow run epi2me-labs/wf-metagenomics --fastq e0306a7f-0f47-436a-bfef-23e64d0532f5_unclassified.fastq --out_dir e0306a7f-0f47-436a-bfef-23e64d0532f5_unclassified_metagen
+#nextflow run epi2me-labs/wf-metagenomics --fastq e0306a7f-0f47-436a-bfef-23e64d0532f5_unclassified.fastq --out_dir e0306a7f-0f47-436a-bfef-23e64d0532f5_unclassified_metagen
+#for barcode 20 (homework)
+nextflow run epi2me-labs/wf-metagenomics --fastq e0306a7f-0f47-436a-bfef-23e64d0532f5_SQK-RBK114-24_barcode20.fastq --out_dir barcode20_metagen
+
+#run next scp on your laptop ie, not the terminal where you are connected to curie
+scp -r your_netid@10.2.0.53:/home/your_netid/PBC450_2025/soil_metagenomics/20251107_1254_MN29288_FBE86142_e0306a7f/pod5/demux/barcode20_metagen .
+
 

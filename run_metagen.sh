@@ -38,6 +38,5 @@ cd soil_metagenomics/20251107_1254_MN29288_FBE86142_e0306a7f/pod5/demux/
 NanoPlot -o e0306a7f-0f47-436a-bfef-23e64d0532f5_unclassified_np --fastq e0306a7f-0f47-436a-bfef-23e64d0532f5_unclassified.fastq
 
 # 6. Run epi2me wf-metagenomics pipeline, this uses nextflow                                                                                                                           
-nextflow run epi2me-labs/wf-metagenomics —-out_dir e0306a7f-0f47-436a-bfef-23e64d0532f5_unclassified_metagen --fastq e0306a7f-0f47-436a-bfef-23e64d0532f5_unclassified.fastq
-
+nextflow run epi2me-labs/wf-metagenomics --fastq e0306a7f-0f47-436a-bfef-23e64d0532f5_unclassified.fastq --out_dir e0306a7f-0f47-436a-bfef-23e64d0532f5_unclassified_metagen
 
